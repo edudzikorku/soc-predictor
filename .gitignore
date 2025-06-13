@@ -4,3 +4,5 @@ __pycache__/
 .mypy_cache/
 .qodo/
 .vscode/
+app/__pycache__/
+utils/__pycache__/
