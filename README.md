@@ -162,11 +162,9 @@ Predicts Soil Organic Carbon based on input features.
 }
 ```
 
-#### `GET /health`
+#### `GET /`
 Health check endpoint for monitoring service status.
 
-#### `GET /model/info`
-Returns information about the current model and its performance metrics.
 
 ### Interactive Documentation
 
@@ -191,10 +189,10 @@ This script will:
 ### Training Configuration
 
 Modify `config.py` to adjust training parameters:
-- Model hyperparameters
-- Cross-validation settings
-- Feature selection options
+- Input data directory
+- Unimportant features to drop
 - Output directories
+- Test size and random seed for reproducibility
 
 ## Model Insights
 
