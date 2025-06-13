@@ -1,0 +1,6 @@
+# Add unwanted files and folders to .gitignore
+# Ignore documents
+__pycache__/
+.mypy_cache/
+.qodo/
+.vscode/
