@@ -126,19 +126,6 @@ docker pull edudzi/soc-predictor:v1.0
 docker run -p 8000:8000 edudzi/soc-predictor:v1.0
 ```
 
-### Docker Compose (Optional)
-
-```yaml
-version: '3.11'
-services:
-  soc-predictor:
-    image: edudzi/soc-predictor:latest
-    ports:
-      - "8000:8000"
-    environment:
-      - ENV=production
-```
-
 ## API Documentation
 
 ### Endpoints
