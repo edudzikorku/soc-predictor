@@ -1,3 +1,12 @@
+"""
+DESCRIPTION:     Model visualizer class for plotting SHAP values and regression predictions.
+                 It provides methods to create SHAP summary, impact, dependence plots, and 
+                 regression plots for the models compared in this work.
+
+AUTHOR:          Edudzi
+DATE:            13/06/2025
+"""
+
 import matplotlib.pyplot as plt  # type: ignore
 import seaborn as sns # type: ignore
 import shap # type: ignore
@@ -205,5 +214,5 @@ class ModelVisualizer:
             plt.legend()
 
             filename = os.path.join(self.save_dir, f'regression_plot_{name}.{format}')
-            plt.savefig(filename, dpi=300, bbox_inches = 'tight')
+            plt.savefig(filename, dpi = 300, bbox_inches = 'tight')
             plt.close()

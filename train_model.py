@@ -1,3 +1,13 @@
+"""
+DESCRIPTION:    This is the script combining the logic from other scripts in the soc prediction workflow.
+                It trains regression models on the SOC dataset, evaluates their performance, and performs SHAP 
+                analysis for interpretability. It includes data loading, preprocessing, 
+                model training, evaluation, visualization, and saving the best model.
+
+AUTHOR:         Edudzi
+DATE:           13/06/2025
+"""
+
 import shap # type: ignore
 import config # type: ignore
 import pandas as pd # type: ignore

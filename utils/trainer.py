@@ -1,3 +1,12 @@
+"""
+DESCRIPTION:     Model trainer class for training multiple regression models using randomized 
+                 search for hyperparameter tuning. It initializes models with their parameter 
+                 distributions, trains them using randomized search CV, and returns the best model. 
+
+AUTHOR:          Edudzi
+DATE:            13/06/2025
+"""
+
 from typing import Dict, Tuple # type: ignore
 import numpy as np # type: ignore
 import warnings # type: ignore

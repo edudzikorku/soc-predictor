@@ -1,3 +1,13 @@
+"""
+DESCRIPTION:     Model evaluator class for evaluating the trained regression models. It provides methods 
+                 to evaluate multiple models, calculate performance metrics, and display a summary of the results. 
+                 In addition, it uses cross-validation to assess model performance
+                 and returns a DataFrame containing the evaluation metrics for each model.
+
+AUTHOR:          Edudzi
+DATE:            13/06/2025
+"""
+
 import numpy as np # type: ignore
 import pandas as pd # type: ignore
 from typing import Dict # type: ignore

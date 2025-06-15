@@ -1,3 +1,15 @@
+"""
+DESCRIPTION:     Data loader class for preprocessing the data. It handles loading the dataset,
+                 dropping unnecessary fields, splitting the data into training and testing sets,
+                 and applying preprocessing steps such as scaling numerical features and encoding
+                 categorical features. It also provides methods to retrieve the preprocessor and
+                 feature names after preprocessing.
+
+AUTHOR:          Edudzi
+DATE:            13/06/2025
+"""
+
+
 import numpy as np # type: ignore
 import pandas as pd # type: ignore
 from typing import Tuple, List # type: ignore

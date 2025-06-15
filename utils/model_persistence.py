@@ -1,3 +1,12 @@
+"""
+DESCRIPTION:     Model persistence class for saving and loading trained models.
+                 It provides methods to save the best model with a timestamp and select 
+                 the best model based on evaluation metrics, such as R² and RMSE.
+
+AUTHOR:          Edudzi
+DATE:            13/06/2025
+"""
+
 import pickle # type: ignore
 import os # type: ignore
 from datetime import datetime as dt # type: ignore
