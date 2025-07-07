@@ -5,4 +5,5 @@ __pycache__/
 .qodo/
 .vscode/
 app/__pycache__/
+app/.env
 utils/__pycache__/

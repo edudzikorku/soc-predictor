@@ -1,8 +1,39 @@
 import os 
 import pickle
 import pandas as pd # type: ignore
-from fastapi import FastAPI # 
+from typing import Optional
 from pydantic import BaseModel 
+from dotenv import load_dotenv # type: ignore
+from fastapi.security.api_key import APIKeyHeader # type: ignore
+from fastapi import FastAPI, HTTPException, Depends, Security, status # type: ignore
+
+# Load environment variables
+load_dotenv()
+# Initialize API key header for security
+API_KEY = os.getenv("API_KEY")
+API_KEY_NAME = "SOC-API-KEY"
+API_KEY_HEADER = APIKeyHeader(name = API_KEY_NAME, auto_error = False)
+
+async def get_api_key(api_key: Optional[str] = Security(API_KEY_HEADER)) -> None:
+    """
+    Dependency to get API key from request header.
+    
+    Args:
+        api_key (Optional[str]): API key from request header.
+        
+    Returns:
+        str: Validated API key.
+        
+    Raises:
+        HTTPException: If API key is missing or invalid.
+    """
+    if api_key is None or api_key != API_KEY:
+        raise HTTPException(
+            status_code = status.HTTP_401_UNAUTHORIZED,
+            detail = "Invalid or missing API key",
+            headers = {"WWW-Authenticate": "Bearer"}
+        )
+
 
 class SOCPredictor(BaseModel):
     """
@@ -49,7 +80,7 @@ class SOCPredictor(BaseModel):
 app = FastAPI(
     title = "Soil Organic Carbon Predictor",
     description = "Predicts Soil Organic Carbon (SOC) using environmental and soil features.",
-    version = "1.0.0"
+    version = "1.0.1"
 )
 
 # Load the trained model
@@ -63,7 +94,7 @@ with open(model_path, "rb") as model_file:
     model = pickle.load(model_file)
 
 # Create the prediction endpoint
-@app.post("/predict")
+@app.post("/predict", dependencies = [Depends(get_api_key)])
 def predict_soc(input_data: SOCPredictor):
     """
     Predict Soil Organic Carbon (SOC) based on input features.
