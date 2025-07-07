@@ -155,7 +155,7 @@ def health_check():
     Returns:
         dict: Health status of the API.
     """
-    return {"status": "API is running", "version": "1.0.0"}
+    return {"status": "API is running", "version": "1.0.1"}
 
 
 
