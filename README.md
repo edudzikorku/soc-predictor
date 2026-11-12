@@ -40,7 +40,7 @@ A machine learning API for predicting Soil Organic Carbon (SOC) using environmen
 
 
 
-*⭐ Best model: Random Forest selected based on validation performance*
+*Best model: Random Forest selected based on validation performance*
 
 ## Project Structure
 
